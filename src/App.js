@@ -103,7 +103,7 @@ function App() {
             <RecipeComponent recipeObj={recipeObj.recipe} />
           ))
         ) : (
-          <Placeholder src="/hamburger.svg" />
+          <Placeholder src="/hamburger.SVG" />
         )}
       </RecipeListContainer>
     </Header.Container>
