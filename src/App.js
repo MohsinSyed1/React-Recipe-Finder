@@ -101,7 +101,7 @@ function App() {
             <RecipeComponent recipeObj={recipeObj.recipe} />
           ))
         ) : (
-          <Placeholder src="/react-recipe-finder/hamburger.svg" />
+          <Placeholder src="react-recipe-finder/hamburger.svg" />
         )}
       </RecipeListContainer>
     </Header.Container>
