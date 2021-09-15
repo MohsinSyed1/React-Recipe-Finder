@@ -18,8 +18,6 @@ import Axios from "axios";
 
 const RecipeComponent = (props) => {
   const [show, setShow] = useState(false);
-  // const [ingridientObj, updateIngridientObj] = useState([]);
-  // updateIngridientObj(ingridientObj);
   console.log(props);
   const { recipeObj } = props;
   return (
@@ -86,11 +84,11 @@ function App() {
     <Header.Container>
       <Header.HeaderComponent>
         <Header.AppNameComponent>
-          <Header.AppIcon src="/hamburger.svg" />
+          <Header.AppIcon src="/react-recipe-finder/hamburger.svg" />
           Recipe Finder
         </Header.AppNameComponent>
         <Header.SearchComponent>
-          <Header.SearchIcon src="/search-icon.svg" />
+          <Header.SearchIcon src="/react-recipe-finder/search-icon.svg" />
           <Header.SearchInput
             placeholder="Search Recipe"
             onChange={onTextChange}
@@ -103,7 +101,7 @@ function App() {
             <RecipeComponent recipeObj={recipeObj.recipe} />
           ))
         ) : (
-          <Placeholder src="/hamburger.SVG" />
+          <Placeholder src="/react-recipe-finder/hamburger.svg" />
         )}
       </RecipeListContainer>
     </Header.Container>
