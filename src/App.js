@@ -84,11 +84,11 @@ function App() {
     <Header.Container>
       <Header.HeaderComponent>
         <Header.AppNameComponent>
-          <Header.AppIcon src="/react-recipe-finder/hamburger.svg" />
+          <Header.AppIcon src="react-recipe-finder/hamburger.svg" />
           Recipe Finder
         </Header.AppNameComponent>
         <Header.SearchComponent>
-          <Header.SearchIcon src="/react-recipe-finder/search-icon.svg" />
+          <Header.SearchIcon src="react-recipe-finder/search-icon.svg" />
           <Header.SearchInput
             placeholder="Search Recipe"
             onChange={onTextChange}
