@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import Header from "./components/headerComponent";
 import iconImg from "./react-recipe-finder/cutlery-svgrepo-com.svg";
 import bgImgAlt from "./react-recipe-finder/food-svgrepo-com (1).svg";
+import searchIcon from "./react-recipe-finder/search-icon.svg";
 
 import {
   RecipeListContainer,
@@ -97,7 +98,8 @@ function App() {
         </Header.AppNameComponent>
         <Header.SearchComponent>
           <Header.SearchIcon
-            src="/react-recipe-finder/search-icon.svg"
+            // src="/react-recipe-finder/search-icon.svg"
+            src={searchIcon}
             alt="search icon"
           />
           <Header.SearchInput
