@@ -1,9 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import Header from "./components/headerComponent";
+import iconImg from "./react-recipe-finder/cutlery-svgrepo-com.svg";
+import bgImgAlt from "./react-recipe-finder/food-svgrepo-com (1).svg";
 
 import {
   RecipeListContainer,
@@ -13,6 +15,7 @@ import {
   IngredientsText,
   SeeMoreText,
   Placeholder,
+  SeeNewTab,
 } from "./components/recipeComponent";
 import Axios from "axios";
 
@@ -22,32 +25,33 @@ const RecipeComponent = (props) => {
   const { recipeObj } = props;
   return (
     <>
-      <Dialog open={show}>
-        <DialogTitle id="alert-dialog-slide-title">Ingredients</DialogTitle>
-        <DialogContent>
-          <table>
-            <thead>
-              <th>Ingredients</th>
-              <th>Weight</th>
-            </thead>
-            <tbody>
-              {recipeObj.ingredients.map((ingredientObj) => (
-                <tr>
-                  <td>{ingredientObj.text}</td>
-                  <td>{ingredientObj.weight}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </DialogContent>
-        <DialogActions>
-          <IngredientsText onClick={() => window.open(recipeObj.url)}>
-            See More
-          </IngredientsText>
-          <SeeMoreText onClick={() => setShow(false)}>Close</SeeMoreText>
-        </DialogActions>
-      </Dialog>
       <RecipeContainer>
+        <Dialog open={show} aria-labelledby="simple-dialog-title">
+          <DialogTitle id="alert-dialog-slide-title">Ingredients</DialogTitle>
+          <DialogContent>
+            <RecipeName>{recipeObj.label}</RecipeName>
+            <table>
+              <thead>
+                <th>Ingredients</th>
+                <th>Weight (In Grams)</th>
+              </thead>
+              <tbody>
+                {recipeObj.ingredients.map((ingredientObj) => (
+                  <tr className="ingredient-list">
+                    <td align="center">{ingredientObj.text}</td>
+                    <td align="center">{Math.round(ingredientObj.weight)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </DialogContent>
+          <DialogActions>
+            <SeeNewTab onClick={() => window.open(recipeObj.url)}>
+              See More
+            </SeeNewTab>
+            <SeeMoreText onClick={() => setShow(false)}>Close</SeeMoreText>
+          </DialogActions>
+        </Dialog>
         <CoverImage src={recipeObj.image} />
         <RecipeName>{recipeObj.label}</RecipeName>
         <IngredientsText onClick={() => setShow(true)}>
@@ -84,11 +88,18 @@ function App() {
     <Header.Container>
       <Header.HeaderComponent>
         <Header.AppNameComponent>
-          <Header.AppIcon src="react-recipe-finder/hamburger.svg" />
-          Recipe Finder
+          <Header.AppIcon
+            // src="/react-recipe-finder/cutlery-svgrepo-com.svg"
+            src={iconImg}
+            alt="App Icon"
+          />
+          Recipe Finder App
         </Header.AppNameComponent>
         <Header.SearchComponent>
-          <Header.SearchIcon src="react-recipe-finder/search-icon.svg" />
+          <Header.SearchIcon
+            src="/react-recipe-finder/search-icon.svg"
+            alt="search icon"
+          />
           <Header.SearchInput
             placeholder="Search Recipe"
             onChange={onTextChange}
@@ -101,7 +112,11 @@ function App() {
             <RecipeComponent recipeObj={recipeObj.recipe} />
           ))
         ) : (
-          <Placeholder src="react-recipe-finder/hamburger.svg" />
+          <Placeholder
+            // src="/react-recipe-finder/ice-cream-dessert-svgrepo-com.svg"
+            src={bgImgAlt}
+            alt="Background"
+          />
         )}
       </RecipeListContainer>
     </Header.Container>

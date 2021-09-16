@@ -5,13 +5,13 @@ export const RecipeListContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   padding: 30px;
-  justify-content: space-evenly;
   gap: 20px;
+  justify-content: space-evenly;
 `;
 export const RecipeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 10px;
   width: 300px;
   box-shadow: 0px 3px 10px 0 #aaa;
 `;
@@ -22,9 +22,13 @@ export const CoverImage = styled.img`
 
 export const RecipeName = styled.div`
   font-size: 18px;
+  font-weight: 600;
   color: black;
   font-weight: bold;
-  margin: 10p 0;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 export const IngredientsText = styled.div`
   font-size: 18px;
@@ -51,8 +55,13 @@ export const SeeMoreText = styled.div`
 `;
 
 export const Placeholder = styled.img`
-  width: 120px;
-  height: 120px;
-  margin: 200px;
+  width: 350px;
+  height: 350px;
+  margin: 50px;
   opacity: 50%;
+`;
+
+export const SeeNewTab = styled(SeeMoreText)`
+  color: green;
+  border: solid 1px green;
 `;

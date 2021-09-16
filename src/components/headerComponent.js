@@ -6,7 +6,8 @@ const HeaderComponent = styled.div`
   display: flex;
   flex-direction: row;
   padding: 20px;
-  font: 20p;
+  font: 20px;
+  font-size: 25px;
   font-weight: bold;
   box-shadow: 0px 3px 6px 0 #555;
   align-items: center;
@@ -16,6 +17,7 @@ const HeaderComponent = styled.div`
 const AppNameComponent = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: row;
 `;
 
 const AppIcon = styled.img`
@@ -33,13 +35,15 @@ const SearchComponent = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  padding: 10px;
+  padding: 10px 10px;
   border-radius: 6px;
+  margin-left: 20px;
   width: 50%;
 `;
 const SearchInput = styled.input`
   border: none;
-  outine: none;
+  color: black;
+  outline: none;
   margin-left: 15px;
   font-size: 16px;
   font-weight: bold;
